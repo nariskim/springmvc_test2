@@ -12,22 +12,30 @@ public class CodeController {
 
 	@Autowired
 	CodeServiceImpl service;
-	
+
 	@RequestMapping(value = "/code/codeGroupList")
-//	public String memberList(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 	public String codeGroupList(Model model) throws Exception {
 
 		List<Code> list = service.selectList();
 		model.addAttribute("list", list);
 
 		return "code/codeGroupList";
-		
-		
 	}
-	
-	
-	
 
-	
-	
+	@RequestMapping(value = "/code/codeGroupForm")
+		public String codeGroupForm(Model model) throws Exception {
+			
+			
+			return "code/codeGroupForm";
+	}
+
+	@RequestMapping(value = "/code/codeGroupInst")
+	public String codeGroupInst(Code dto) throws Exception {
+
+		System.out.println();
+		service.insert(dto);
+		return "";
+
+	}
+
 }

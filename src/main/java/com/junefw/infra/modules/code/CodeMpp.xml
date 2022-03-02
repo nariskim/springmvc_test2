@@ -6,19 +6,32 @@
 
 <mapper namespace="com.junefw.infra.modules.code.CodeMpp">
 
-    <resultMap id="resultMapObj" type="com.junefw.infra.modules.code.Code"></resultMap>
+	<resultMap id="resultMapObj"
+		type="com.junefw.infra.modules.code.Code"></resultMap>
 
 	<select id="selectList" resultMap="resultMapObj">
-			select
-				a.oycgSeq
-				, a.oycgName
-				, a.oycgDelNy
-			from
-				oyCodeGroup a
-				
-			where 1=1
-			and oycgDelNy=0
+		select
+		a.oycgSeq
+		, a.oycgName
+		, a.oycgDelNy
+		from
+		oyCodeGroup a
+
+		where 1=1
+		and oycgDelNy=0
 	</select>
 
-	
+	<insert id="insert">
+		INSERT INTO
+		FROM
+		allyoung.oyCodeGroup a (
+		oycgName
+		, oycgDelNy
+		) values (
+		#(oycgName)
+		,0
+		)
+
+	</insert>
+
 </mapper>
