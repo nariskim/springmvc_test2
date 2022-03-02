@@ -14,7 +14,7 @@
 	<c:otherwise>
 		<c:forEach items="${list}" var="item" varStatus="status">	
 		
-		<c:out value="${item.oymbSeq}"/> | <c:out value="${item.oymbId}"/> | <c:out value="${item.oymbName}"/> <br>
+		<c:out value="${item.oycgSeq}"/> | <c:out value="${item.oycgName}"/> | <c:out value="${item.oycgDelNy}"/> <br>
 		
 		</c:forEach>
 	</c:otherwise>
