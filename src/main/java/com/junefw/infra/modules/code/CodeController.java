@@ -37,5 +37,28 @@ public class CodeController {
 		return "";
 
 	}
+	
+	
+	@RequestMapping(value = "/code/codeGroupView")
+	public String codeGroupView(CodeVo vo, Model model) throws Exception {
+		
+		System.out.println("vo.getOycgSeq() : " + vo.getOycgSeq());
+		
+		//	디비까지 가서 한 건의 데이터 값을 가지고 온다, VO
+		Code rt = service.selectOne(vo);
+	
+		//	가지고 온 값을 jsp로 넘겨준다
+		model.addAttribute("item" , rt);
+		
+		return "code/codeGroupView";
+		
+	}
+	
+	
+	//수정폼이 보여지는 주소
+		// 한건의 데이터
+	
+	//실제 수정을 하는 주소
+		// 수정 프로세스 실행
 
 }

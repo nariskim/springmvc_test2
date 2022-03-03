@@ -13,7 +13,8 @@
 		select
 		a.oycgSeq
 		, a.oycgName
-		, a.oycgDelNy
+		,
+		a.oycgDelNy
 		from
 		oyCodeGroup a
 
@@ -26,12 +27,24 @@
 		FROM
 		allyoung.oyCodeGroup a (
 		oycgName
-		, oycgDelNy
+		,
+		oycgDelNy
 		) values (
 		#(oycgName)
 		,0
 		)
 
 	</insert>
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+		a.oycgSeq
+		, a.oycgName
+		, a.oycgDelNy
+		from
+		oyCodeGroup a
+		where 1=1
+		and oycgDelNy = 0
+		and oycgSeq = #{oycgSeq}
+	</select>
 
 </mapper>
