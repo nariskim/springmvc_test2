@@ -6,6 +6,10 @@ public class Code {
 	private String oycgName = "";
 	private Integer oycgDelNy;
 
+	private String oycdSeq = "";
+	private String oycdName = "";
+	private Integer oycdDelNy;
+
 	public String getOycgSeq() {
 		return oycgSeq;
 	}
@@ -29,6 +33,30 @@ public class Code {
 	public void setOycgDelNy(Integer oycgDelNy) {
 		this.oycgDelNy = oycgDelNy;
 	}
-	
+
+
+	public String getOycdSeq() {
+		return oycdSeq;
+	}
+
+	public void setOycdSeq(String oycdSeq) {
+		this.oycdSeq = oycdSeq;
+	}
+
+	public String getOycdName() {
+		return oycdName;
+	}
+
+	public void setOycdName(String oycdName) {
+		this.oycdName = oycdName;
+	}
+
+	public Integer getOycdDelNy() {
+		return oycdDelNy;
+	}
+
+	public void setOycdDelNy(Integer oycdDelNy) {
+		this.oycdDelNy = oycdDelNy;
+	}
 
 }

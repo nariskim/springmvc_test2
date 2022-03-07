@@ -9,7 +9,7 @@
 	<resultMap id="resultMapObj"
 		type="com.junefw.infra.modules.code.Code"></resultMap>
 
-	<select id="selectList" resultMap="resultMapObj">
+	<!-- <select id="selectList" resultMap="resultMapObj">
 		select
 		a.oycgSeq
 		, a.oycgName
@@ -20,31 +20,53 @@
 
 		where 1=1
 		and oycgDelNy=0
-	</select>
+	</select> -->
 
 	<insert id="insert">
 		INSERT INTO
 		FROM
-		allyoung.oyCodeGroup a (
-		oycgName
+		oyCode a (
+		oycdName
 		,
-		oycgDelNy
+		oycdDelNy
 		) values (
-		#(oycgName)
+		#(oycdName)
 		,0
 		)
 
 	</insert>
+	
 	<select id="selectOne" resultMap="resultMapObj">
 		select
-		a.oycgSeq
-		, a.oycgName
-		, a.oycgDelNy
+		a.oycdSeq
+		, a.oycdName
+		, a.oycdDelNy
 		from
-		oyCodeGroup a
+		oyCode a
 		where 1=1
-		and oycgDelNy = 0
-		and oycgSeq = #{oycgSeq}
+		and oycdDelNy = 0
+		and oycdSeq = #{oycdSeq}
 	</select>
+	
+	<update id="update">
+	UPDATE oyCode SET
+	oycdName = #{oycdName}
+	WHERE 1=1
+	AND oycdSeq = #{oycdSeq}
+	
+	</update>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		select
+		a.oycdSeq
+		, a.oycdName
+		, a.oycdDelNy
+		from
+		oyCode a
+		where 1=1
+		and oycdDelNy=0
+	</select>
+	
+	
 
 </mapper>
