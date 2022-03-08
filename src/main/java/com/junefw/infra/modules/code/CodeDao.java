@@ -31,4 +31,22 @@ public class CodeDao {
 	public int update(Code dto) {
 		return sqlSession.update(namespace + ".update", dto);
 	}
+
+
+
+	public List<Code> selectListCode() {
+		return sqlSession.selectList(namespace + ".selectListCode", "");
+	}
+
+	public int insertCode(Code dto) {
+		return sqlSession.insert(namespace + ".insertCode", dto);
+	}
+
+	public Code selectOneCode(CodeVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOneCode", vo);
+	}
+
+	public int updateCode(Code dto) {
+		return sqlSession.update(namespace + ".updateCode", dto);
+	}
 }

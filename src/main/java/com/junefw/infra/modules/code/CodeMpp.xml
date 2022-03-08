@@ -9,64 +9,115 @@
 	<resultMap id="resultMapObj"
 		type="com.junefw.infra.modules.code.Code"></resultMap>
 
-	<!-- <select id="selectList" resultMap="resultMapObj">
+	<select id="selectList" resultMap="resultMapObj">
+
 		select
-		a.oycgSeq
-		, a.oycgName
-		,
-		a.oycgDelNy
+		oycgSeq
+		, oycgName
+		, oycgDelNy
+
 		from
-		oyCodeGroup a
+		oyCodeGroup
 
 		where 1=1
 		and oycgDelNy=0
-	</select> -->
+
+	</select>
 
 	<insert id="insert">
 		INSERT INTO
 		FROM
-		oyCode a (
-		oycdName
-		,
-		oycdDelNy
-		) values (
-		#(oycdName)
+		oyCodeGroup (
+		oycgName
+		, oycgDelNy
+		)
+		values (
+		#(oycgName)
 		,0
 		)
 
 	</insert>
-	
+
 	<select id="selectOne" resultMap="resultMapObj">
+
 		select
-		a.oycdSeq
-		, a.oycdName
-		, a.oycdDelNy
+		oycgSeq
+		, oycgName
+		, oycgDelNy
 		from
-		oyCode a
+		oyCode
 		where 1=1
-		and oycdDelNy = 0
-		and oycdSeq = #{oycdSeq}
+		and oycgDelNy = 0
+		and
+		oycgSeq = #{oycgSeq}
 	</select>
-	
+
 	<update id="update">
-	UPDATE oyCode SET
-	oycdName = #{oycdName}
-	WHERE 1=1
-	AND oycdSeq = #{oycdSeq}
-	
+		UPDATE
+		oyCodegroup
+		SET
+		oycgName = #{oycgName}
+		WHERE 1=1
+		AND oycgSeq = #{oycgSeq}
 	</update>
-	
-	<select id="selectList" resultMap="resultMapObj">
+
+	<select id="selectListCode" resultMap="resultMapObj">
+
 		select
-		a.oycdSeq
-		, a.oycdName
-		, a.oycdDelNy
+		oycdSeq
+		, oycdName
+		, oycdDelNy
+
 		from
-		oyCode a
+		oyCode
+
 		where 1=1
 		and oycdDelNy=0
+
 	</select>
-	
-	
+
+	<insert id="insertCode">
+		INSERT INTO
+		FROM
+		oyCode (
+		oycdName
+		, oycdDelNy
+		, oycgSeq
+		)
+		values (
+		#(oycdName)
+		,0
+		,0
+		)
+
+	</insert>
+
+	<select id="selectOneCode" resultMap="resultMapObj">
+
+		select
+		oycdSeq
+		, oycdName
+		, oycdDelNy
+		from
+		oyCode
+		where 1=1
+		and oycdDelNy = 0
+		and
+		oycdSeq = #{oycdSeq}
+	</select>
+
+	<update id="updateCode">
+
+		UPDATE
+		oyCode
+		SET
+		oycdName = #{oycdName}
+		WHERE 1=1
+		AND oycdSeq = #{oycdSeq}
+
+	</update>
+
+
+
 
 </mapper>

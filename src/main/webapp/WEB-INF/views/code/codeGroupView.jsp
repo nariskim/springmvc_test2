@@ -5,8 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<form method="post" action="codeGroupUpdt">
-	<input type="text" name="oycgSeq" value="${item.oycgSeq}" style="visibility:hidden;">
-	<input type="text" name="oycgChangeName" placeholder="수정_이름">
-	<input type="submit" value="제출">
-</form>
+<c:out value="${item.oycgSeq}"/> | <c:out value="${item.oycdName}"/> | <c:out value="${item.oycdDelNy}"/>
+
+<a href="/infra/code/codeGroupForm2?oycdSeq=<c:out value="${item.oycdSeq}"/>">수정</a>
+<a href="/infra/code/codeGroupForm?oycgSeq=<c:out value="${item.oycgSeq}"/>">등록</a>

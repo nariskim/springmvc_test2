@@ -2,10 +2,15 @@ package com.junefw.infra.modules.code;
 
 public class CodeVo {
 
-	// VO
+	//oyCodeGroup
 
 	private String oycgSeq;
+	
+	//oyCode
+	
 	private String oycdSeq;
+
+	
 	
 	public String getOycgSeq() {
 		return oycgSeq;
