@@ -9,7 +9,7 @@
 
 
 
-
+<form method="post" action="/infra/code/codeInst">
 <select name="oycgSeq">
 	<c:forEach items="${list}" var="rt" varStatus="status">
 		<option value="${item.oycgSeq}"><c:out value="${item.oycgSeq}" />.
@@ -17,7 +17,7 @@
 	</c:forEach>
 </select>
 
-<form method="post" action="/infra/code/codeInst">
+
 
 	<input type="text" name="oycdName" placeholder="이름"> <input
 		type="text" name="oycdDelNy" placeholder="0000"> <input

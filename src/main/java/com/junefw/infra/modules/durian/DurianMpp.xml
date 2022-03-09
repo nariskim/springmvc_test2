@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.junefw.infra.modules.durian.DurianMpp">
+
+	<resultMap id="resultMapObj"
+		type="com.junefw.infra.modules.durian.Durian"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+
+		select
+		oymbSeq
+		, oymbAdminNy
+		, oymbDormancyNy
+		, oymbName
+		, oymbId
+		, oymbPassword
+		, oymbPwdModDate
+		, oymbGenderCd
+		, oymbDob
+		, oymbSavedCd
+		, oymbMarriageCd
+		, oymbMarriageDate
+		, oymbChildenNy
+		, oymbFavoriteColor
+		, oymbRecommenderSeq
+		, oymbEmailConsentNy
+		, oymbSmsConsentNy
+		, oymbPushConsentNy
+		, oymbDesc
+		, oymbDelNy
+
+		from
+		oyMember
+
+		where 1=1
+		and oymbDelNy=0 
+
+	</select>
+
+
+
+
+
+
+</mapper>

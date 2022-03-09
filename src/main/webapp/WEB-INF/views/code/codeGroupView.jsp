@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<c:out value="${item.oycgSeq}"/> | <c:out value="${item.oycdName}"/> | <c:out value="${item.oycdDelNy}"/>
+<c:out value="${item.oycgSeq}"/> | <c:out value="${item.oycgName}"/> | <c:out value="${item.oycgDelNy}"/>
 
 <a href="/infra/code/codeGroupForm2?oycdSeq=<c:out value="${item.oycdSeq}"/>">수정</a>
 <a href="/infra/code/codeGroupForm?oycgSeq=<c:out value="${item.oycgSeq}"/>">등록</a>

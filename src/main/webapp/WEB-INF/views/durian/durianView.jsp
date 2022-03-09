@@ -6,8 +6,8 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 
-<c:out value="${item.oycdSeq}"/> | <c:out value="${item.oycgSeq}"/> | <c:out value="${item.oycdName}"/> | <c:out value="${item.oycdDelNy}"/> <br>
+<c:out value="${item.oymbSeq}"/> | <c:out value="${item.oymbName}"/> | <c:out value="${item.oymbId}"/> | <c:out value="${item.oymbDelNy}"/> <br>
 
-<a href="/infra/code/codeForm2?oycdSeq=<c:out value="${item.oycdSeq}"/>">수정</a>
-<a href="/infra/code/codeForm?oycgSeq=<c:out value="${item.oycgSeq}"/>">등록</a>
+<a href="/infra/durian/durianEdit?oymbSeq=<c:out value="${item.oymbSeq}"/>">수정</a>
+<a href="/infra/durian/durianForm?oymbSeq=<c:out value="${item.oymbSeq}"/>">등록</a>
 

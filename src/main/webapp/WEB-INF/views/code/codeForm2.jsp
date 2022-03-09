@@ -7,7 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<form method="post" action ="/infra/code/codeInst">
+<form method="post" action ="/infra/code/codeUpdt">
 	
 	
 	<input type="hidden" name="oycdSeq" value= <c:out value="${item.oycdSeq}"/>>

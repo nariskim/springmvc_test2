@@ -6,7 +6,7 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 <form method = "post" action ="codeInst">
-	<input type="text" name ="oycgName" placeholder ="아이디" value="<c:out value="${item.oycdName}"/>">
+	<input type="text" name ="oycdName" placeholder ="아이디" value="<c:out value="${item.oycdName}"/>">
 	<input type="submit" value="제출">
 
 </form>
