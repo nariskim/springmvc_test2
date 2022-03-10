@@ -14,7 +14,8 @@
 		select
 		oycgSeq
 		, oycgName
-		, oycgDelNy
+		,
+		oycgDelNy
 
 		from
 		oyCodeGroup
@@ -43,7 +44,8 @@
 		select
 		oycgSeq
 		, oycgName
-		, oycgDelNy
+		,
+		oycgDelNy
 		from
 		oyCode
 		where 1=1
@@ -77,20 +79,17 @@
 	</select>
 
 	<insert id="insertCode">
-		INSERT INTO
-		FROM
-		oyCode (
-		oycdName
-		, oycdDelNy
-		, oycgSeq
-		)
-		values (
-		#(oycdName)
-		,0
-		,0
-		)
-
+		INSERT INTO oyCode(
+			oycdName
+			,oycdDelNy
+			,oycgSeq
+		) VALUES (
+			#{oycdName}
+			,0
+			,#{oycgSeq}
+		)		
 	</insert>
+
 
 	<select id="selectOneCode" resultMap="resultMapObj">
 
@@ -113,7 +112,8 @@
 		SET
 		oycdName = #{oycdName}
 		WHERE 1=1
-		AND oycdSeq = #{oycdSeq}
+		AND
+		oycdSeq = #{oycdSeq}
 
 	</update>
 

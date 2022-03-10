@@ -79,6 +79,10 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeForm")
 	public String codeForm(Model model) throws Exception {
 
+		List<Code> list = service.selectList();
+		
+		model.addAttribute("list", list);
+		
 		return "code/codeForm";
 	}
 

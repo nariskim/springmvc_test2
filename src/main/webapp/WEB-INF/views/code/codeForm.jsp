@@ -10,16 +10,16 @@
 
 
 <form method="post" action="/infra/code/codeInst">
-<select name="oycgSeq">
-	<c:forEach items="${list}" var="rt" varStatus="status">
-		<option value="${item.oycgSeq}"><c:out value="${item.oycgSeq}" />.
-			<c:out value="${item.oycgName}" /></option>
-	</c:forEach>
-</select>
-
-
-
+	<select name="oycgSeq">
+		<c:forEach items="${list}" var="item" varStatus="status">
+			<option value="<c:out value="${item.oycgSeq}"/>"><c:out
+					value="${item.oycgName}" />(
+				<c:out value="${item.oycgSeq}" />)
+			</option>
+		</c:forEach>
+	</select>
+	
 	<input type="text" name="oycdName" placeholder="이름"> <input
-		type="text" name="oycdDelNy" placeholder="0000"> <input
+		type="hidden" name="oycdDelNy" placeholder="0"> <input
 		type="submit" value="제출">
 </form>
