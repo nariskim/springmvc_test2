@@ -101,8 +101,7 @@
 		oyCode
 		where 1=1
 		and oycdDelNy = 0
-		and
-		oycdSeq = #{oycdSeq}
+		and oycdSeq = #{oycdSeq}
 	</select>
 
 	<update id="updateCode">

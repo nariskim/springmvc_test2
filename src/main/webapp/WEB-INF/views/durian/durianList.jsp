@@ -375,16 +375,15 @@
 													</th>
 													<th scope="row"><c:out value="${item.oymbSeq}" /></th>
 													<td><a
-														href="/infra/durian/durianView?oymbSeq=<c:out value="${item.oymbSeq}"/>">
-															<c:out value="${item.oymbName}" />
-													</a></td>
+														href="/infra/durian/durianView?oymbSeq=<c:out value="${item.oymbSeq}"/>"><c:out
+																value="${item.oymbName}" /></a></td>
 													<td><c:out value="${item.oymbId}" /></td>
 													<td><c:out value="${item.oymbGenderCd}" /></td>
 													<td>01033333333</td>
 													<td>rhdee@naver.com</td>
 
 												</tr>
-												
+
 											</c:forEach>
 										</c:otherwise>
 									</c:choose>
@@ -461,8 +460,10 @@
 										<td colspan="5">
 										<td><div style="text-align: right;">
 												<button type="button" class="btn btn btn-light btn-sm">
-													<a href="#"><img
-														src="../../../images/xdmin/person-plus-fill.svg"></a>
+													<a
+														href="/infra/durian/durianForm?oymbSeq=<c:out value="${item.oymbSeq}"/>">
+														<img src="../../../images/xdmin/person-plus-fill.svg">
+													</a>
 												</button>
 												<button type="button" class="btn btn btn-light btn-sm">
 													<a href="#"><img

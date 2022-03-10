@@ -91,7 +91,7 @@ public class CodeController {
 
 		service.insertCode(dto);
 		
-		return "";
+		return "redirect:/code/codeList";
 	}
 
 	@RequestMapping(value = "/code/codeView")
@@ -120,7 +120,7 @@ public class CodeController {
 		
 		service.updateCode(dto);
 		
-		return "code/codeUpdt";
+		return "redirect:/code/codeView?oycdSeq=" + dto.getOycdSeq();
 	}
 	
 }

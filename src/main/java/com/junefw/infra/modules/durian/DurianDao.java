@@ -20,9 +20,15 @@ public class DurianDao {
 	public List<Durian> selectList() {
 		return sqlSession.selectList(namespace + ".selectList", ""); 
 	}
+	public int insert(Durian dto) {
+		return sqlSession.insert(namespace + ".insert", dto);
+	}
 	public Durian selectOne(DurianVo vo) {
 		return sqlSession.selectOne(namespace + ".selectOne", vo);
 	}
 
+	public int update(Durian dto) {
+		return sqlSession.update(namespace + ".update", dto);
+	}
 	
 }

@@ -14,7 +14,7 @@ public class DurianController {
 	DurianServiceImpl service;
 
 	@RequestMapping(value = "/durian/durianList")
-	public String codeGroupList(Model model) throws Exception {
+	public String durianList(Model model) throws Exception {
 
 		List<Durian> list = service.selectList();
 
@@ -31,6 +31,38 @@ public class DurianController {
 		model.addAttribute("item", rt);
 
 		return "durian/durianView";
+	}
+	
+	@RequestMapping(value = "/durian/durianForm")
+	public String durianForm(Model model) throws Exception {
+
+		return "durian/durianForm";
+	}
+
+	@RequestMapping(value = "/durian/durianInst")
+	public String durianInst(Durian dto) throws Exception {
+
+		service.insert(dto);
+		
+		return "redirect:/durian/durianList";
+	}
+	
+	@RequestMapping(value = "/durian/durianEdit")
+	public String durianEdit(DurianVo vo, Model model) throws Exception {
+
+		Durian rt = service.selectOne(vo);
+	
+		model.addAttribute("item", rt);
+
+		return "durian/durianEdit";
+	}
+	
+	@RequestMapping(value = "/durian/durianUpdt")
+	public String durianUpdt(Durian dto) throws Exception {
+		
+		service.update(dto);
+		
+		return "redirect:/durian/durianView?oymbSeq=" + dto.getOymbSeq();
 	}
 }
 

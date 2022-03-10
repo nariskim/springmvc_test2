@@ -41,7 +41,46 @@
 
 	</select>
 
+	<insert id="insert">
+		INSERT INTO oyMember(
+			oymbName
+			, oymbId
+			,oymbDelNy
+			<!-- ,oycgSeq -->
+		) VALUES (
+			#{oymbName}
+			, #{oymbId}
+			,0
+			<!-- ,#{oycgSeq} -->
+		)		
+	</insert>
+	
+	<select id="selectOne" resultMap="resultMapObj">
 
+		select
+		oymbSeq
+		, oymbName
+		, oymbId
+		, oymbDelNy
+		from
+		oyMember
+		where 1=1
+		and oymbDelNy = 0
+		
+	</select>
+
+	<update id="update">
+
+		UPDATE
+		oyMember
+		SET
+		oymbName = #{oymbName}
+		, oymbId = #{oymbId}
+		WHERE 1=1
+		AND
+		oymbSeq = #{oymbSeq}
+
+	</update>
 
 
 
