@@ -16,8 +16,8 @@ public class CodeDao {
 
 	private static String namespace = "com.junefw.infra.modules.code.CodeMpp";
 
-	public List<Code> selectList() {
-		return sqlSession.selectList(namespace + ".selectList", "");
+	public List<Code> selectList(CodeVo vo) {
+		return sqlSession.selectList(namespace + ".selectList", vo);
 	}
 
 	public int insert(Code dto) {
@@ -34,8 +34,8 @@ public class CodeDao {
 
 
 
-	public List<Code> selectListCode() {
-		return sqlSession.selectList(namespace + ".selectListCode", "");
+	public List<Code> selectListCode(CodeVo vo) {
+		return sqlSession.selectList(namespace + ".selectListCode", vo);
 	}
 
 	public int insertCode(Code dto) {

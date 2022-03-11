@@ -23,6 +23,19 @@ public class Durian {
 	private String oymbDesc = "";
 	private Integer oymbDelNy;
 	
+	private String oympNumber ="";
+	private Integer oympDelNy;
+	private String oyoaUrl = "";
+	private Integer oyoaDelNy;
+	private String oyjqAnswer = "";
+	private Integer oyjqDelNy;
+	private String oymeEmailFull = "";
+	private String oymeEmailAccount = "";
+	private String oymeEmailDomain = "";
+	private String oymaAddress1 = "";
+	private String oymaAddress2 = "";
+	private String oymaZipCode = "";
+	
 	public String getOymbSeq() {
 		return oymbSeq;
 	}
@@ -142,6 +155,78 @@ public class Durian {
 	}
 	public void setOymbDelNy(Integer oymbDelNy) {
 		this.oymbDelNy = oymbDelNy;
+	}
+	public String getOympNumber() {
+		return oympNumber;
+	}
+	public void setOympNumber(String oympNumber) {
+		this.oympNumber = oympNumber;
+	}
+	public Integer getOympDelNy() {
+		return oympDelNy;
+	}
+	public void setOympDelNy(Integer oympDelNy) {
+		this.oympDelNy = oympDelNy;
+	}
+	public String getOyoaUrl() {
+		return oyoaUrl;
+	}
+	public void setOyoaUrl(String oyoaUrl) {
+		this.oyoaUrl = oyoaUrl;
+	}
+	public Integer getOyoaDelNy() {
+		return oyoaDelNy;
+	}
+	public void setOyoaDelNy(Integer oyoaDelNy) {
+		this.oyoaDelNy = oyoaDelNy;
+	}
+	public String getOyjqAnswer() {
+		return oyjqAnswer;
+	}
+	public void setOyjqAnswer(String oyjqAnswer) {
+		this.oyjqAnswer = oyjqAnswer;
+	}
+	public Integer getOyjqDelNy() {
+		return oyjqDelNy;
+	}
+	public void setOyjqDelNy(Integer oyjqDelNy) {
+		this.oyjqDelNy = oyjqDelNy;
+	}
+	public String getOymeEmailFull() {
+		return oymeEmailFull;
+	}
+	public void setOymeEmailFull(String oymeEmailFull) {
+		this.oymeEmailFull = oymeEmailFull;
+	}
+	public String getOymeEmailAccount() {
+		return oymeEmailAccount;
+	}
+	public void setOymeEmailAccount(String oymeEmailAccount) {
+		this.oymeEmailAccount = oymeEmailAccount;
+	}
+	public String getOymeEmailDomain() {
+		return oymeEmailDomain;
+	}
+	public void setOymeEmailDomain(String oymeEmailDomain) {
+		this.oymeEmailDomain = oymeEmailDomain;
+	}
+	public String getOymaAddress1() {
+		return oymaAddress1;
+	}
+	public void setOymaAddress1(String oymaAddress1) {
+		this.oymaAddress1 = oymaAddress1;
+	}
+	public String getOymaAddress2() {
+		return oymaAddress2;
+	}
+	public void setOymaAddress2(String oymaAddress2) {
+		this.oymaAddress2 = oymaAddress2;
+	}
+	public String getOymaZipCode() {
+		return oymaZipCode;
+	}
+	public void setOymaZipCode(String oymaZipCode) {
+		this.oymaZipCode = oymaZipCode;
 	}
 
 	

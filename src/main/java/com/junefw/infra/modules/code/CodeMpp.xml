@@ -14,14 +14,18 @@
 		select
 		oycgSeq
 		, oycgName
-		,
-		oycgDelNy
+		, oycgDelNy
 
 		from
 		oyCodeGroup
 
 		where 1=1
+		<choose>
+			<when test="shOycgDelNy == 1">AND oycdDelNy = 1</when>
+			<when test="shOycgDelNy == 0">AND oycdDelNy = 0</when>
+		</choose>
 		and oycgDelNy=0
+		<if test="shOycgName != null and !shOycgName.equals('')"> AND oycgName LIKE concat('%',#{shOycgName},'%')</if>
 
 	</select>
 
@@ -65,29 +69,32 @@
 
 	<select id="selectListCode" resultMap="resultMapObj">
 
-		select
-		oycdSeq
-		, oycdName
-		, oycdDelNy
+		SELECT
+		a.oycdSeq
+		, a.oycdName
+		, a.oycdDelNy
 
 		from
-		oyCode
+		oyCode a
 
 		where 1=1
-		and oycdDelNy=0
 
+		and
+		oycdDelNy=0
+
+		<if test="shOycgSeq != null and !shOycgSeq.equals('')"> AND oycgSeq = #{shOycgSeq}</if>
 	</select>
 
 	<insert id="insertCode">
 		INSERT INTO oyCode(
-			oycdName
-			,oycdDelNy
-			,oycgSeq
+		oycdName
+		,oycdDelNy
+		,oycgSeq
 		) VALUES (
-			#{oycdName}
-			,0
-			,#{oycgSeq}
-		)		
+		#{oycdName}
+		,0
+		,#{oycgSeq}
+		)
 	</insert>
 
 
@@ -96,7 +103,8 @@
 		select
 		oycdSeq
 		, oycdName
-		, oycdDelNy
+		,
+		oycdDelNy
 		from
 		oyCode
 		where 1=1
@@ -115,6 +123,8 @@
 		oycdSeq = #{oycdSeq}
 
 	</update>
+
+
 
 
 

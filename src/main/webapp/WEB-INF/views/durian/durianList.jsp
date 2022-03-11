@@ -379,8 +379,8 @@
 																value="${item.oymbName}" /></a></td>
 													<td><c:out value="${item.oymbId}" /></td>
 													<td><c:out value="${item.oymbGenderCd}" /></td>
-													<td>01033333333</td>
-													<td>rhdee@naver.com</td>
+													<td><c:out value="${item.oympNumber}" /></td>
+													<td><c:out value="${item.oymeEmailFull}" /></td>
 
 												</tr>
 

@@ -11,50 +11,57 @@
 
 	<select id="selectList" resultMap="resultMapObj">
 
-		select
-		oymbSeq
-		, oymbAdminNy
-		, oymbDormancyNy
-		, oymbName
-		, oymbId
-		, oymbPassword
-		, oymbPwdModDate
-		, oymbGenderCd
-		, oymbDob
-		, oymbSavedCd
-		, oymbMarriageCd
-		, oymbMarriageDate
-		, oymbChildenNy
-		, oymbFavoriteColor
-		, oymbRecommenderSeq
-		, oymbEmailConsentNy
-		, oymbSmsConsentNy
-		, oymbPushConsentNy
-		, oymbDesc
-		, oymbDelNy
+		SELECT
+		a.oymbName
+		, a.oymbSeq
+		, a.oymbId
+		, a.oymbPassword
+		, a.oymbDob
+		, a.oymbMarriageDate
+		, a.oymbChildenNy
+		, a.oymbFavoriteColor
+		, a.oymbEmailConsentNy
+		, a.oymbSmsConsentNy
+		, a.oymbPushConsentNy
+		, a.oymbDelNy
+		, a.oymbGenderCd
+		, b.oympNumber
+		, b.oympDelNy
+		, c.oyoaUrl
+		, c.oyoaDelNy
+		, d.oyjqAnswer
+		, d.oyjqDelNy
+		, e.oymeEmailFull
+		, e.oymeEmailAccount
+		, e.oymeEmailDomain
+		, f.oymaAddress1
+		, f.oymaAddress2
+		, f.oymaZipCode
 
-		from
-		oyMember
+		From oyMember a
+		left join oymbPhone b on b.oympDefaultNy=1 and b.oymbSeq = a.oymbSeq
+		left join oymbOnlineAddress c on c.oymbSeq = a.oymbSeq
+		left join oymbJoinQna d on d.oymbSeq = a.oymbSeq
+		left join oymbEmail e on e.oymeDefaultNy=1 and e.oymbSeq = a.oymbSeq
+		left join oymbAddress f on f.oymaDefaultNy=1 and f.oymbSeq = a.oymbSeq
 
-		where 1=1
-		and oymbDelNy=0 
 
 	</select>
 
 	<insert id="insert">
 		INSERT INTO oyMember(
-			oymbName
-			, oymbId
-			,oymbDelNy
-			<!-- ,oycgSeq -->
+		oymbName
+		, oymbId
+		,oymbDelNy
+		<!-- ,oycgSeq -->
 		) VALUES (
-			#{oymbName}
-			, #{oymbId}
-			,0
-			<!-- ,#{oycgSeq} -->
-		)		
+		#{oymbName}
+		, #{oymbId}
+		,0
+		<!-- ,#{oycgSeq} -->
+		)
 	</insert>
-	
+
 	<select id="selectOne" resultMap="resultMapObj">
 
 		select
@@ -66,7 +73,7 @@
 		oyMember
 		where 1=1
 		and oymbDelNy = 0
-		
+
 	</select>
 
 	<update id="update">
@@ -75,7 +82,8 @@
 		oyMember
 		SET
 		oymbName = #{oymbName}
-		, oymbId = #{oymbId}
+		, oymbId =
+		#{oymbId}
 		WHERE 1=1
 		AND
 		oymbSeq = #{oymbSeq}

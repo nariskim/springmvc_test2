@@ -5,6 +5,19 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+
+<form id="" name="" method="get" action="/infra/code/codeGroupList">
+
+<select name="shOycgDelNy">
+<option value="">::삭제여부::
+<option value="1">Y
+<option value="0">N
+</select>
+
+이름 : <input type="text" name="shOycgName">
+<input type ="submit" name="search">
+</form>
+
 <c:choose>
 	<c:when test="${fn:length(list) eq 0}">
 		<tr>
